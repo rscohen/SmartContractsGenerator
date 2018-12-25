@@ -54,7 +54,7 @@ In truffle-config.js (or truffle.js on windows), add the following snippet insid
 ```
 require('dotenv').config();
 var HDWalletProvider = require("truffle-hdwallet-provider");
-const MNEMONIC = new Buffer(process.env["MNEMONIC"], "hex"; #ZOB PAS SUR DU HEX
+const MNEMONIC = new Buffer(process.env["MNEMONIC"], "hex"); #ZOB PAS SUR DU HEX
 
 module.exports = {
   networks: {
