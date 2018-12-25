@@ -38,3 +38,38 @@ module.exports = function(deployer) {
     // Additional contracts can be deployed here
 };
 ```
+4Bis "Optionnal" - How to protect your mnemonic (you'll need to write it to deploy the smart contract):
+We'll use the dotenv node module. 
+	$ npm install --save dotenv
+	
+	$ gedit .env -> crée le fichier .env qui stockera vos données confidentielles
+	
+Remplir le .env comme cela :
+	$ MNEMONIC="YOUR_MNEMONIC"
+	
+5 - Configure Ropsten network and the provider
+In truffle-config.js (or truffle.js on windows), add the following snippet inside module.exports:
+
+
+```
+require('dotenv').config();
+var HDWalletProvider = require("truffle-hdwallet-provider");
+const MNEMONIC = new Buffer(process.env["MNEMONIC"], "hex"; #ZOB PAS SUR DU HEX
+
+module.exports = {
+  networks: {
+    development: {
+      host: "127.0.0.1",
+      port: 7545,
+      network_id: "*"
+    },
+    ropsten: {
+      provider: function() {
+        return new HDWalletProvider(MNEMONIC, "https://ropsten.infura.io/YOUR_API_KEY")
+      },
+      network_id: 3,
+      gas: 4000000      //make sure this gas allocation isn't over 4M, which is the max
+    }
+  }
+};
+```
