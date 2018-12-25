@@ -23,9 +23,9 @@ Tuto : https://medium.com/coinmonks/5-minute-guide-to-deploying-smart-contracts-
 
 3 - Create your contract : in ./contracts create a new contract HelloWorld.sol : 
 ```Solidity
-pragma solidity ^0.4.23;
+pragma solidity ^0.5.00;
 contract HelloWorld {
-    function sayHello() public pure returns(string){
+    function sayHello() public pure returns(string memory){
         return(“hello world”);
     }
 }
