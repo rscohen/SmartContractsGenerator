@@ -16,6 +16,8 @@ Tuto : https://medium.com/coinmonks/5-minute-guide-to-deploying-smart-contracts-
 	
 	$ mkdir SmartContractsGenerator
 	
+	$ cd SmartContractsGenerator
+	
 	$ Truffle init 
 	
 	$ npm install --save truffle-hdwallet-provider -> Installation HD Wallet Provider
