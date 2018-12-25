@@ -11,9 +11,14 @@ Tuto : https://medium.com/coinmonks/5-minute-guide-to-deploying-smart-contracts-
 1 - Installer un Node JS. -> brew install Node. Ca installe Node et npm.
 
 2 - Set up Truffle : https://truffleframework.com/truffle C’est un framework de développement pour les Smart Contracts. 
+
 	$ npm install -g truffle
+	
 	$ mkdir SmartContractsGenerator
+	
 	$ Truffle init 
+	
 	$ npm install --save truffle-hdwallet-provider -> Installation HD Wallet Provider
+	
 
 3 - Create your contract 
