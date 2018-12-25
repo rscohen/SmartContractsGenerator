@@ -74,7 +74,8 @@ module.exports = {
 };
 ``` 
 Now deploy (or migrate) your contract to Ropsten as follows. By default, Truffle only deploys to the local developer network :
-	$ truffle deploy --network ropsten
+
+	$ truffle migrate --network ropsten
 	
 You should see : 
 ``` 
