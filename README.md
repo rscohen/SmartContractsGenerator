@@ -8,7 +8,13 @@ SimpleToken.sol is the main SmartContract.
 
 Tuto : https://medium.com/coinmonks/5-minute-guide-to-deploying-smart-contracts-with-truffle-and-ropsten-b3e30d5ee1e
 
-1 - Installer un Node JS. -> brew install Node. Ca installe Node et npm.
+## Install a Node JS
+
+Firstly we have to install Node and npm : 
+- Node.js is an open-source, cross-platform JavaScript run-time environment that executes JavaScript code outside of a browser
+- npm is the package manager for JavaScript
+
+$ brew install node
 
 2 - Set up Truffle : https://truffleframework.com/truffle C’est un framework de développement pour les Smart Contracts. 
 
