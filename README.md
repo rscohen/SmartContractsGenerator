@@ -7,6 +7,7 @@ SimpleToken.sol is the main SmartContract.
 # How to deploy a Smart Contract on Ropsten
 
 ![SmartContractDeployment](http://image.noelshack.com/fichiers/2018/52/3/1545840379-smartcontractdeploymentoptions.jpeg)
+*[source](https://medium.com/coinmonks/5-minute-guide-to-deploying-smart-contracts-with-truffle-and-ropsten-b3e30d5ee1e)*
 ## Install a Node JS
 
 Firstly we have to install Node and npm : 
