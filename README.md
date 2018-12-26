@@ -20,7 +20,7 @@ Tuto : https://medium.com/coinmonks/5-minute-guide-to-deploying-smart-contracts-
 	
 	$ Truffle init 
 	
-	$ npm install --save truffle-hdwallet-provider -> Installation HD Wallet Provider
+	$ npm install --save truffle-hdwallet-provider@web3-one -> Installation HD Wallet Provider
 	
 
 3 - Create your contract : in ./contracts create a new contract HelloWorld.sol : 
