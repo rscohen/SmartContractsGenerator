@@ -5,6 +5,8 @@ Created thanks to : https://github.com/OpenZeppelin/openzeppelin-solidity
 SimpleToken.sol is the main SmartContract.
 
 # How to deploy a Smart Contract on Ropsten
+
+![SmartContractDeployment](http://image.noelshack.com/fichiers/2018/52/3/1545840379-smartcontractdeploymentoptions.jpeg)
 ## Install a Node JS
 
 Firstly we have to install Node and npm : 
