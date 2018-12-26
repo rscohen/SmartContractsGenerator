@@ -16,7 +16,8 @@ Firstly we have to install Node and npm :
 ## Set up Truffle & HDWallet Provider
 
 [Truffle](https://truffleframework.com/truffle) is a development framework for Smart Contracts.
-[HDWallet Provider] (https://github.com/trufflesuite/truffle-hdwallet-provider) is used to sign transactions for addresses derived from a 12-word mnemonic.
+
+[HDWallet_Provider](https://github.com/trufflesuite/truffle-hdwallet-provider) is used to sign transactions for addresses derived from a 12-word mnemonic.
 
 Truffle installation :
 
