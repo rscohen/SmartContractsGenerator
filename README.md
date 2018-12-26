@@ -10,9 +10,10 @@ SimpleToken.sol is the main SmartContract.
 Firstly we have to install Node and npm : 
 - Node.js is an open-source, cross-platform JavaScript run-time environment that executes JavaScript code outside of a browser
 - npm is the package manager for JavaScript
+```
+$ brew install node
+```	
 
-	$ brew install node
-	
 ## Set up Truffle & HDWallet Provider
 
 [Truffle](https://truffleframework.com/truffle) is a development framework for Smart Contracts.
