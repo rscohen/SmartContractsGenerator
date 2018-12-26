@@ -4,10 +4,7 @@ Created thanks to : https://github.com/OpenZeppelin/openzeppelin-solidity
 
 SimpleToken.sol is the main SmartContract.
 
-# How to deploy a Smart Contract - With no dependency atm
-
-Tuto : https://medium.com/coinmonks/5-minute-guide-to-deploying-smart-contracts-with-truffle-and-ropsten-b3e30d5ee1e
-
+# How to deploy a Smart Contract on Ropsten - With no dependency atm
 ## Install a Node JS
 
 Firstly we have to install Node and npm : 
@@ -16,24 +13,31 @@ Firstly we have to install Node and npm :
 
 	$ brew install node
 	
-## Set up Truffle
+## Set up Truffle & HDWallet Provider
 
-Truffle [Truffle](https://truffleframework.com/truffle) is a development framework for Smart Contracts. 
+[Truffle](https://truffleframework.com/truffle) is a development framework for Smart Contracts.
+[HDWallet Provider] (https://github.com/trufflesuite/truffle-hdwallet-provider) is used to sign transactions for addresses derived from a 12-word mnemonic.
 
-2 - Set up Truffle : C’est un framework de développement pour les Smart Contracts. 
+Truffle installation :
 
 	$ npm install -g truffle
 	
+Creation of the working folder : 
+
 	$ mkdir SmartContractsGenerator
 	
 	$ cd SmartContractsGenerator
+
+Initialization of the working file with Truffle :
 	
 	$ Truffle init 
-	
-	$ npm install --save truffle-hdwallet-provider@web3-one -> Installation HD Wallet Provider
-	
 
-3 - Create your contract : in ./contracts create a new contract HelloWorld.sol : 
+HDWallet Provider installation : 
+	
+	$ npm install --save truffle-hdwallet-provider@web3-one
+	
+## Creation of a contract
+In ./contracts create a new contract named HelloWorld.sol : 
 ```Solidity
 pragma solidity ^0.5.0;
 contract HelloWorld {
@@ -42,26 +46,34 @@ contract HelloWorld {
     }
 }
 ```
-4 - Deploy your contract : in ./migrations create a deployment script specifically named 2_deploy_contracts.js :
+
+## Deployment of the smart contract
+In ./migrations create a deployment script specifically named 2_deploy_contracts.js :
 ```Solidity
 var HelloWorld = artifacts.require("./HelloWorld.sol");
 module.exports = function(deployer) {
     deployer.deploy(HelloWorld);
 };
 ```
-4Bis "Optionnal" - How to protect your mnemonic (you'll need to write it to deploy the smart contract):
-We'll use the dotenv node module. 
+
+## Otionnal - How to protect your mnemonic
+Indeed, you'll need to write your mnemonic (passphrase) in order to deploy your smart contract.
+We'll use the [dotenv](https://github.com/motdotla/dotenv) node module to protect your mnemonic.
+
+Installation of dotenv :
 
 	$ npm install --save dotenv
 	
-	$ gedit .env -> crée le fichier .env qui stockera vos données confidentielles
+Creation of your secret file containing your mnemonic :
 	
-Remplir le .env comme cela :
-	$ MNEMONIC="YOUR_MNEMONIC"
+	$ gedit .env
 	
-5 - Configure Ropsten network and the provider
-In truffle-config.js (or truffle.js on windows), add the following snippet inside module.exports:
+In .env, write you mnemonic :
 
+	$ MNEMONIC="YOUR_MNEMONIC"
+
+## Configuration of the provider and the access to the ropsten network
+In truffle-config.js (or truffle.js on windows), add the following snippet inside module.exports:
 
 ```
 require('dotenv').config();
@@ -106,3 +118,4 @@ Saving successful migration to network…
 … 0xee95...
 Saving artifacts…
 ``` 
+Good Job you smart contract is deployed on Ropsten. Remember to save the smart contract's address.
