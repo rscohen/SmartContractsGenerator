@@ -25,23 +25,23 @@ Tuto : https://medium.com/coinmonks/5-minute-guide-to-deploying-smart-contracts-
 
 3 - Create your contract : in ./contracts create a new contract HelloWorld.sol : 
 ```Solidity
-pragma solidity ^0.5.00;
+pragma solidity ^0.5.0;
 contract HelloWorld {
     function sayHello() public pure returns(string memory){
-        return(“hello world”);
+        return 'hello world';
     }
 }
 ```
 4 - Deploy your contract : in ./migrations create a deployment script specifically named 2_deploy_contracts.js :
 ```Solidity
-var HelloWorld = artifacts.require(“HelloWorld”);
+var HelloWorld = artifacts.require("./HelloWorld.sol");
 module.exports = function(deployer) {
-    deployer.deploy(HelloWorld, “hello”);
-    // Additional contracts can be deployed here
+    deployer.deploy(HelloWorld);
 };
 ```
 4Bis "Optionnal" - How to protect your mnemonic (you'll need to write it to deploy the smart contract):
 We'll use the dotenv node module. 
+
 	$ npm install --save dotenv
 	
 	$ gedit .env -> crée le fichier .env qui stockera vos données confidentielles
@@ -56,13 +56,13 @@ In truffle-config.js (or truffle.js on windows), add the following snippet insid
 ```
 require('dotenv').config();
 var HDWalletProvider = require("truffle-hdwallet-provider");
-const MNEMONIC = new Buffer(process.env["MNEMONIC"], "hex"); #ZOB PAS SUR DU HEX
+var MNEMONIC = process.env["MNEMONIC"];
 
 module.exports = {
   networks: {
     development: {
       host: "127.0.0.1",
-      port: 7545,
+      port: 8545,
       network_id: "*"
     },
     ropsten: {
