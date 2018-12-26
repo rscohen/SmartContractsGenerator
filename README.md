@@ -14,9 +14,13 @@ Firstly we have to install Node and npm :
 - Node.js is an open-source, cross-platform JavaScript run-time environment that executes JavaScript code outside of a browser
 - npm is the package manager for JavaScript
 
-$ brew install node
+	$ brew install node
+	
+## Set up Truffle
 
-2 - Set up Truffle : https://truffleframework.com/truffle C’est un framework de développement pour les Smart Contracts. 
+Truffle [Truffle](https://truffleframework.com/truffle) is a development framework for Smart Contracts. 
+
+2 - Set up Truffle : C’est un framework de développement pour les Smart Contracts. 
 
 	$ npm install -g truffle
 	
