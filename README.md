@@ -121,3 +121,14 @@ Saving successful migration to network…
 Saving artifacts…
 ``` 
 Good Job ! Your smart contract is deployed on Ropsten. Remember to save the smart contract's address.
+
+## Access your deployed contract 
+
+Set up your Truffle console to Ropsten network :
+
+	$ truffle console --network ropsten
+	
+Invoke your contract function and say hello :
+
+	$ HelloWorld.deployed().then(function(instance){return instance.sayHello()});
+
