@@ -6,19 +6,30 @@ import os
 
 # Partie graphique
 # -> Choix du nom du token
-token_Name = eval(raw_input("Token name :"))
-print("The token's name is : " + token_Name)
-#os.system(sed -re "s/input_name/token_Name" test.sol)
-# -> Choix du symbole
-token_Symbol = raw_input("Token symbol :")
-#os.system(sed -re "s/input_symbol/token_Symbol" test.sol)
-# -> Choix du nombre de token emis
-token_supply = input("Token supply :")
-#os.system(sed -re "s/input_supply/token_Supply" test.sol)
+try :
+    token_Name = eval(raw_input("Token name :"))
 # -> Verification des inputs :
 #       - nom du token est bien du type ".."
+except :
+    print("You have to write a string with the apostrophe (ex : 'Token_Name')")
+else :
+    print("The token's name is : " + token_Name)
+    os.system("sed -i '' 's/input_name/"+token_Name+"/g' test.sol")
+
+# -> Choix du symbole
+token_Symbol = raw_input("Token symbol :")
+# -> Verification des inputs :
 #       - symbole == 3 lettres (a verifier)
+print("The token's symbol is : " + token_symbol)
+os.system("sed -i '' 's/input_symbol/"+token_Symbol+"/g' test.sol")
+
+# -> Choix du nombre de token emis
+token_Supply = raw_input("Token supply :")
+# -> Verification des inputs :
 #       - Nombre de token emis est bien un nb
+print("The token's supply is : " + token_Supply)
+os.system("sed -i '' 's/input_supply/"+token_Supplr+"/g' test.sol")
+
 # -> Fenetre de validation de deploiement du SC
 
 # Partie executable
