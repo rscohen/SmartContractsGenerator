@@ -6,32 +6,43 @@ import os
 
 # Partie graphique
 # -> Choix du nom du token
-try :
-    token_Name = eval(raw_input("Token name :"))
+token_Name = '';
+while type(token_Name) != type('string') or len(token_Name) < 1 :
+    try :
+        token_Name = eval(raw_input("Token name :"))
 # -> Verification des inputs :
 #       - nom du token est bien du type ".."
-except :
-    print("You have to write a string with the apostrophe (ex : 'Token_Name')")
-else :
-    print("The token's name is : " + token_Name)
-    os.system("sed -i '' 's/input_name/"+token_Name+"/g' test.sol")
+    except :
+        print("You have to write a string with the apostrophe (ex : 'Token_Name')")
+
+print("The token's name is : " + token_Name)
+os.system("sed -i '' 's/input_name/"+token_Name+"/g' test.sol")
+
 
 # -> Choix du symbole
-token_Symbol = raw_input("Token symbol :")
-# -> Verification des inputs :
-#       - symbole == 3 lettres (a verifier)
-print("The token's symbol is : " + token_symbol)
+token_Symbol = '';
+while type(token_Symbol) != type('string') or len(token_Symbol) < 1 :
+    try :
+        token_Symbol = eval(raw_input("Token symbol :"))
+    # -> Verification des inputs :
+    #       - symbole == 3 lettres (a verifier)
+    except :
+        print("You have to write a string with the apostrophe (ex : 'Token_Symbol')")
+
+
+print("The token's symbol is : " + token_Symbol)
 os.system("sed -i '' 's/input_symbol/"+token_Symbol+"/g' test.sol")
+
 
 # -> Choix du nombre de token emis
 token_Supply = raw_input("Token supply :")
 # -> Verification des inputs :
 #       - Nombre de token emis est bien un nb
 print("The token's supply is : " + token_Supply)
-os.system("sed -i '' 's/input_supply/"+token_Supplr+"/g' test.sol")
+os.system("sed -i '' 's/input_supply/"+token_Supply+"/g' test.sol")
 
 # -> Fenetre de validation de deploiement du SC
-
+print("Thanks, your token is named : " + token_Name + "\n it symbol is : " + token_Symbol + "\n it supply is : " + token_Supply )
 # Partie executable
 #  bash cmd : truffle migrate --ropsten
 #

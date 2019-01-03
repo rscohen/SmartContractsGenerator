@@ -1,3 +1,6 @@
-pragma etc
-bla bla
-bla Rudy ok
+Lorem ipsum input_name sit amet,
+Lorem ipsum dolor sit amet,
+Lorem ipsum dolor sit amet,
+Lorem input_supply dolor sit amet,
+Lorem ipsum dolor sit amet,
+Lorem ipsum dolor sit input_symbol,
