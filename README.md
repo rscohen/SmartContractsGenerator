@@ -10,12 +10,12 @@ SimpleToken.sol is the main SmartContract.
 *[source](https://medium.com/coinmonks/5-minute-guide-to-deploying-smart-contracts-with-truffle-and-ropsten-b3e30d5ee1e)*
 ## Install a Node JS
 
-Firstly we have to install Node and npm : 
+Firstly we have to install Node and npm :
 - Node.js is an open-source, cross-platform JavaScript run-time environment that executes JavaScript code outside of a browser
 - npm is the package manager for JavaScript
 ```
 $ brew install node
-```	
+```
 
 ## Set up Truffle & HDWallet Provider
 
@@ -26,23 +26,23 @@ $ brew install node
 Truffle installation :
 
 	$ npm install -g truffle
-	
-Creation of the working folder : 
+
+Creation of the working folder :
 
 	$ mkdir SmartContractsGenerator
-	
+
 	$ cd SmartContractsGenerator
 
 Initialization of the working file with Truffle :
-	
-	$ Truffle init 
 
-HDWallet Provider installation : 
-	
+	$ Truffle init
+
+HDWallet Provider installation :
+
 	$ npm install --save truffle-hdwallet-provider@web3-one
-	
+
 ## Creation of a contract
-In ./contracts create a new contract named HelloWorld.sol : 
+In ./contracts create a new contract named HelloWorld.sol :
 ```Solidity
 pragma solidity ^0.5.0;
 contract HelloWorld {
@@ -61,6 +61,10 @@ module.exports = function(deployer) {
 };
 ```
 
+Creation of the jsons's files of our smart contracts :
+
+	$ truffle build
+
 ## Otionnal - How to protect your mnemonic
 Indeed, you'll need to write your mnemonic (passphrase) in order to deploy your smart contract.
 We'll use the [dotenv](https://github.com/motdotla/dotenv) node module to protect your mnemonic.
@@ -68,11 +72,11 @@ We'll use the [dotenv](https://github.com/motdotla/dotenv) node module to protec
 Installation of dotenv :
 
 	$ npm install --save dotenv
-	
+
 Creation of your secret file containing your mnemonic :
-	
+
 	$ gedit .env
-	
+
 In .env, write you mnemonic :
 
 	$ MNEMONIC="YOUR_MNEMONIC"
@@ -101,13 +105,13 @@ module.exports = {
     }
   }
 };
-``` 
+```
 Now deploy (or migrate) your contract to Ropsten as follows. By default, Truffle only deploys to the local developer network :
 
 	$ truffle migrate --network ropsten
-	
-You should see : 
-``` 
+
+You should see :
+```
 Running migration: 1_initial_migration.js
 Deploying Migrations…
 … 0xd01dd7...
@@ -122,16 +126,15 @@ HelloWorld: [SAVE THIS ADDRESS!!]
 Saving successful migration to network…
 … 0xee95...
 Saving artifacts…
-``` 
+```
 Good Job ! Your smart contract is deployed on Ropsten. Remember to save the smart contract's address.
 
-## Access your deployed contract 
+## Access your deployed contract
 
 Set up your Truffle console to Ropsten network :
 
 	$ truffle console --network ropsten
-	
+
 Invoke your contract function and say hello :
 
 	$ HelloWorld.deployed().then(function(instance){return instance.sayHello()});
-
