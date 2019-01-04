@@ -42,51 +42,51 @@ def query_yes_no(question, default="yes"):
 
 # Partie graphique
 # -> Choix du nom du token
-token_Name = '';
-while type(token_Name) != type('string') or len(token_Name) < 1 :
+token_name = '';
+while type(token_name) != type('string') or len(token_name) < 1 :
     try :
-        token_Name = eval(raw_input("Token name :"))
+        token_name = eval(raw_input("Token name :"))
 # -> Verification des inputs :
 #       - nom du token est bien du type ".."
     except :
-        print("You have to write a string with the apostrophe (ex : 'Token_Name')")
+        print("You have to write a string with the apostrophe (ex : 'Token_name')")
 
-print("The token's name is : " + token_Name)
-os.system("sed -i '' 's/input_name/"+token_Name+"/g' test.sol")
+print("The token's name is : " + token_name)
+os.system("sed -i '' 's/input_name/"+token_name+"/g' test.sol")
 
 
 # -> Choix du symbole
-token_Symbol = '';
-while type(token_Symbol) != type('string') or len(token_Symbol) < 1 :
+token_symbol = '';
+while type(token_symbol) != type('string') or len(token_symbol) < 1 :
     try :
-        token_Symbol = eval(raw_input("Token symbol :"))
+        token_symbol = eval(raw_input("Token symbol :"))
     # -> Verification des inputs :
     #       - symbole == 3 lettres (a verifier)okoko
     except :
-        print("You have to write a string with the apostrophe (ex : 'Token_Symbol')")
+        print("You have to write a string with the apostrophe (ex : 'Token_symbol')")
 
 
-print("The token's symbol is : " + token_Symbol)
-os.system("sed -i '' 's/input_symbol/"+token_Symbol+"/g' test.sol")
+print("The token's symbol is : " + token_symbol)
+os.system("sed -i '' 's/input_symbol/"+token_symbol+"/g' test.sol")
 
 
 # -> Choix du nombre de token emis
-token_Supply = raw_input("Token supply :")
+token_supply = raw_input("Token supply :")
 # -> Verification des inputs :
 #       - Nombre de token emis est bien un nb
-print("The token's supply is : " + token_Supply)
-os.system("sed -i '' 's/input_supply/"+token_Supply+"/g' test.sol")
+print("The token's supply is : " + token_supply)
+os.system("sed -i '' 's/input_supply/"+token_supply+"/g' test.sol")
 
 # -> Fenetre de validation de deploiement du SC
-print("Thanks, your token is named : " + token_Name + "\n it symbol is : " + token_Symbol + "\n it supply is : " + token_Supply )
+print("Thanks, your token is named : " + token_name + "\n it symbol is : " + token_symbol + "\n it supply is : " + token_supply )
 
 # Partie executable
 answer = query_yes_no("Smart Contract's deployment")
 if answer == True :
+    os.system("truffle build")
     os.system("truffle migrate --ropsten")
 else :
     sys.exit()
-#  bash cmd : truffle migrate --ropsten
 #
 
 # Partie graphique 2
