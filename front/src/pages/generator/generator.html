@@ -8,17 +8,17 @@
 	<form>
 		<div class="text-center">
 		  <label for="name">Token name *</label>
-		  <input type="text" id="tokenName" name="tokenName" placeholder="Token name" required>
+		  <ion-input type="text" [(ngModel)]="tokenName" name="tokenName" placeholder="Token name" required></ion-input>
 		</div>
 
 		<div class="text-center">
 		  <label for="symbol">Token symbol *</label>
-		  <input type="text" id="tokenSymbol" name="tokenSymbol" placeholder="Token symbol in 3 letters" required>
+		  <ion-input type="text" [(ngModel)]="tokenSymbol" name="tokenSymbol" placeholder="Token symbol in 3 letters" required></ion-input>
 		</div>
 
 		<div class="text-center">
 		  <label for="token_supply">Token supply *</label>
-		  <input type="number" id="tokenSupply" name="tokenSupply" placeholder="Number of tokens" required>
+		  <ion-input type="number" [(ngModel)]="tokenSupply" name="tokenSupply" placeholder="Number of tokens" required></ion-input>
 		</div>
 
 		<div class="text-center">
