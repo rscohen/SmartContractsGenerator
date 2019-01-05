@@ -17,8 +17,8 @@ export class GeneratorPage {
 
   checkInputs(){
     console.log(this.tokenName);
-    console.log(this.tokenName);
-    console.log(this.tokenName);
+    console.log(this.tokenSymbol);
+    console.log(this.tokenSupply);
     if(this.tokenName == ''){
       alert("Token Name Field is missing");
     }
@@ -30,25 +30,41 @@ export class GeneratorPage {
     }
     else{
       return true;
+
     }
   }
 
-  personalizeSmartContract(SmartContractPath){
-    var pathToSmartContract = '../../../../contracts/SimpleTokenTemplate.sol';
-    var reader = new FileReader();
-    reader.onload = function(e) {
-      var text = reader.result;
-    }
-    reader.readAsText(pathToSmartContract);
-    console.log(reader.result)
-
-    //var result = data.replace(/tName/g, this.tokenName);
-    //result = result.replace(/tSymbol/g, this.tokenSymbol);
-    //result = result.replace(/tSupply/g, this.tokenSupply);
-
+  readTextFile(file){
+      var rawFile = new XMLHttpRequest();
+      rawFile.open("GET", file, false);
+      rawFile.onreadystatechange = function ()
+      {
+          if(rawFile.readyState === 4)
+          {
+              if(rawFile.status === 200 || rawFile.status == 0)
+              {
+                  var allText = rawFile.responseText;
+                  alert(allText);
+              }
+          }
+      }
+      rawFile.send(null);
   }
 
-  deployOnRopsten(){
+  openExternalFile(url){
+    var oReq = new XMLHttpRequest();
+    oReq.open("get", url, false);
+    oReq.send();
+    return oReq;
+  }
+
+  personalizeSmartContract(SmartContractTemplate){
+    var template = this.openExternalFile(SmartContractTemplate).responseText;
+    console.log(template);
+    var result = template.replace(/tName/g, '\''+this.tokenName+'\'');
+    result = result.replace(/tSymbol/g, '\''+this.tokenSymbol+'\'');
+    result = result.replace(/tSupply/g, this.tokenSupply);
+    console.log(result);
   }
 
   deployContract(){
@@ -57,12 +73,11 @@ export class GeneratorPage {
 
   	//Personalize the SmartContract according to the inputs
     if (checked == true){
-      var SmartContractPath = '../../../../contracts/PersonalizedSmartContract.sol'
-      this.personalizeSmartContract(SmartContractPath);
+      var urlToTemplate = "https://raw.githubusercontent.com/rscohen/SmartContractsGenerator/master/contracts/SimpleTokenTemplate.sol";
+      var template = this.personalizeSmartContract(urlToTemplate);
     }
 
   	//Deploy the SmartContract on the chosen Blockchain
-    this.deployOnRopsten();
   }
 
 }
