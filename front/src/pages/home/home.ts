@@ -13,7 +13,7 @@ export class HomePage {
 
   }
 
-  backToHome(){
+  goToGenerator(){
     this.navCtrl.push(GeneratorPage);
   }
 

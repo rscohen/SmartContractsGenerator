@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { NavParams, NavController } from 'ionic-angular';
 
+import { DeploymentPage } from '../deployment/deployment';
+
 
 @Component({
   templateUrl: 'generator.html'
@@ -30,7 +32,6 @@ export class GeneratorPage {
     }
     else{
       return true;
-
     }
   }
 
@@ -60,14 +61,13 @@ export class GeneratorPage {
 
   personalizeSmartContract(SmartContractTemplate){
     var template = this.openExternalFile(SmartContractTemplate).responseText;
-    console.log(template);
     var result = template.replace(/tName/g, '\''+this.tokenName+'\'');
     result = result.replace(/tSymbol/g, '\''+this.tokenSymbol+'\'');
-    result = result.replace(/tSupply/g, this.tokenSupply);
-    console.log(result);
+    result = result.replace(/tSupply/g, this.tokenSupply.toString());
+    return result;
   }
 
-  deployContract(){
+  submitContract(){
   	//Check each input
     var checked = this.checkInputs();
 
@@ -75,9 +75,13 @@ export class GeneratorPage {
     if (checked == true){
       var urlToTemplate = "https://raw.githubusercontent.com/rscohen/SmartContractsGenerator/master/contracts/SimpleTokenTemplate.sol";
       var template = this.personalizeSmartContract(urlToTemplate);
-    }
+      console.log('TEMPLATE: ' + template);
 
-  	//Deploy the SmartContract on the chosen Blockchain
+      //Redirect to summary before deployment
+      this.navCtrl.push(DeploymentPage, {
+        data: template
+      });
+    }
   }
 
 }
