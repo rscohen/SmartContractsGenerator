@@ -1,37 +1,38 @@
-<ion-header>
-    <ion-navbar color = "primary">
-        <ion-title> Define your SmartContract </ion-title>
-    </ion-navbar>
-</ion-header>
+<!DOCTYPE html>
+<html>
+  <head>
+      <title> Define your SmartContract </title>
+  </head>
 
-<ion-content class="has-header" overflow-scroll=”true”>
-	<form>
-		<div class="text-center">
-		  <label for="name">Token name *</label>
-		  <ion-input type="text" [(ngModel)]="tokenName" name="tokenName" placeholder="Token name" required></ion-input>
-		</div>
+  <body>
+  	<form action="/generation" method="post">
+  		<div class="text-center">
+  		  <label for="name">Token name *</label>
+        <input class="form-control" type="text" id="tokenName" name="tokenName" placeholder="Token name" required>
+  		</div>
 
-		<div class="text-center">
-		  <label for="symbol">Token symbol *</label>
-		  <ion-input type="text" [(ngModel)]="tokenSymbol" name="tokenSymbol" placeholder="Token symbol in 3 letters" required></ion-input>
-		</div>
+  		<div class="text-center">
+  		  <label for="symbol">Token symbol *</label>
+        <input class="form-control" type="text" id="tokenSymbol" name="tokenSymbol" placeholder="Token symbol in 3 letters" required>
+  		</div>
 
-		<div class="text-center">
-		  <label for="token_supply">Token supply *</label>
-		  <ion-input type="number" [(ngModel)]="tokenSupply" name="tokenSupply" placeholder="Number of tokens" required></ion-input>
-		</div>
+  		<div class="text-center">
+  		  <label for="token_supply">Token supply *</label>
+        <input class="form-control" type="number" id="tokenSupply" name="tokenSupply" placeholder="Number of tokens" required>
+  		</div>
 
-		<div class="text-center">
-		  <button type="ion-button" class="btn btn-primary" (click)="submitContract()">
-		    Submit
-		  </button>
-		</div>
-	</form>
-</ion-content>
+  		<div class="text-center">
+  		  <button type="submit" class="btn btn-primary">
+  		    Submit
+  		  </button>
+  		</div>
+  	</form>
+  </body>
 
-<ion-footer>
-	<p>
-		Authors : Rudy Cohen | Romain Rouvillois | Bastien Chevallier
-		Confidential
-	</p>
-</ion-footer>
+  <footer>
+  	<p>
+  		Authors : Rudy Cohen | Romain Rouvillois | Bastien Chevallier
+  		Confidential
+  	</p>
+  </footer>
+</html>

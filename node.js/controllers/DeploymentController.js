@@ -3,7 +3,7 @@
 export default {
 
   getPage: (req, res) => {
-    res.render('deployment');
+    res.render('deployment', );
   },
 
   //  constructor(public navParams: NavParams, public navCtrl: NavController) {

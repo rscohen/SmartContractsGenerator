@@ -1,82 +1,64 @@
+const checkInputs = (name, symbol, supply) => {
+  console.log(name);
+  console.log(symbol);
+  console.log(supply);
+
+  if(name == ''){
+    alert("Token Name Field is missing");
+  }
+  else if(symbol == ''){
+    alert("Token Symbol Field is missing");
+  }
+  else if(supply == undefined){
+    alert("Token Supply Field is missing");
+  }
+  else{
+    return true;
+  }
+}
+
+const openExternalFile = (url) => {
+  var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
+  var oReq = new XMLHttpRequest();
+  oReq.open("get", url, false);
+  oReq.send();
+  return oReq;
+}
+
+const personalizeSmartContract = (SmartContractTemplate, tName, tSymbol, tSupply) => {
+  return new Promise(function(resolve, reject) {
+    var template = openExternalFile(SmartContractTemplate).responseText;
+    var result = template.replace(/tName/g, '\''+tName+'\'');
+    result = result.replace(/tSymbol/g, '\''+tSymbol+'\'');
+    result = result.replace(/tSupply/g, tSupply.toString());
+    resolve(result);
+  });
+
+}
+
 export default {
 
-  //tokenName:string='';
-  //tokenSymbol:string='';
-  //tokenSupply:number= undefined;
-
-  getPage : (req, res) => {
+  getPage: (req, res) => {
     res.render('generator');
   },
 
-  checkInputs(){
-    console.log(this.tokenName);
-    console.log(this.tokenSymbol);
-    console.log(this.tokenSupply);
-    if(this.tokenName == ''){
-      alert("Token Name Field is missing");
-    }
-    else if(this.tokenSymbol == ''){
-      alert("Token Symbol Field is missing");
-    }
-    else if(this.tokenSupply == undefined){
-      alert("Token Supply Field is missing");
-    }
-    else{
-      return true;
-    }
-  },
+  postGeneratedSC: (req, res) => {
+    //Check each input
+    var tName = req.body.tokenName;
+    var tSymbol = req.body.tokenSymbol;
+    var tSupply = req.body.tokenSupply;
 
-  readTextFile(file){
-      var rawFile = new XMLHttpRequest();
-      rawFile.open("GET", file, false);
-      rawFile.onreadystatechange = function ()
-      {
-          if(rawFile.readyState === 4)
-          {
-              if(rawFile.status === 200 || rawFile.status == 0)
-              {
-                  var allText = rawFile.responseText;
-                  alert(allText);
-              }
-          }
-      }
-      rawFile.send(null);
-  },
+    var checked = checkInputs(tName, tSymbol, tSupply);
 
-  openExternalFile(url){
-    var oReq = new XMLHttpRequest();
-    oReq.open("get", url, false);
-    oReq.send();
-    return oReq;
-  },
-
-  personalizeSmartContract(SmartContractTemplate){
-    var template = this.openExternalFile(SmartContractTemplate).responseText;
-    var result = template.replace(/tName/g, '\''+this.tokenName+'\'');
-    result = result.replace(/tSymbol/g, '\''+this.tokenSymbol+'\'');
-    result = result.replace(/tSupply/g, this.tokenSupply.toString());
-    return result;
-  },
-
-  submitContract(){
-  	//Check each input
-    var checked = this.checkInputs();
-
-  	//Personalize the SmartContract according to the inputs
+    //Personalize the SmartContract according to the inputs
     if (checked == true){
       var urlToTemplate = "https://raw.githubusercontent.com/rscohen/SmartContractsGenerator/master/contracts/SimpleTokenTemplate.sol";
-      var template = this.personalizeSmartContract(urlToTemplate);
-      console.log('TEMPLATE: ' + template);
-
-      //Redirect to summary before deployment
-      this.navCtrl.push(DeploymentPage, {
-        data: template
+      personalizeSmartContract(urlToTemplate, tName, tSymbol, tSupply)
+      .then( (template) => {
+        //Redirect to summary before deployment
+        res.redirect('/deployment', {contract: template });
       });
     }
-  },
-
-  createSC(){
-
   },
 
 }
