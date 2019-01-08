@@ -2,13 +2,25 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Your SmartContract</title>
+    <title>Deploy your SmartContract</title>
     <link rel="stylesheet" type="text/css" href="/css/style.css">
   </head>
   <body>
-    <div class="container">
-      {{SmartContractDraft}}
-    </div>
+    <h1> Deploy your SmartContract </h1>
+    <form action="/#" method="post">
+      <div class="form-group">
+        <label for="network">Select the network</label>
+        <select class="form-control" id="network" name="network" required>
+          <option value= "ropsten" > Ropsten </option>
+        </select>
+      </div>
+
+      <div class="text-center">
+        <button type="submit" class="btn btn-primary">
+          Deploy
+        </button>
+      </div>
+    </form>
   </body>
 
   <footer>

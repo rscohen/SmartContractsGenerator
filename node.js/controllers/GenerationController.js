@@ -47,16 +47,16 @@ export default {
     var tName = req.body.tokenName;
     var tSymbol = req.body.tokenSymbol;
     var tSupply = req.body.tokenSupply;
-
     var checked = checkInputs(tName, tSymbol, tSupply);
 
     //Personalize the SmartContract according to the inputs
     if (checked == true){
       var urlToTemplate = "https://raw.githubusercontent.com/rscohen/SmartContractsGenerator/master/contracts/SimpleTokenTemplate.sol";
       personalizeSmartContract(urlToTemplate, tName, tSymbol, tSupply)
-      .then( (template) => {
+      .then((template) => {
         //Redirect to summary before deployment
-        res.redirect('/deployment', {contract: template });
+        console.log(template);
+        res.render('summary', { contract : template });
       });
     }
   },
