@@ -1,22 +1,15 @@
-import { exec } from 'child_process';
-
 var contract = null;
 
 const sh = (cmd) => {
-  return new Promise(function (resolve, reject) {
-    exec(cmd, (err, stdout, stderr) => {
-      if (err) {
-        reject(err);
-      } else {
-        resolve({ stdout, stderr });
-      }
-    });
-  });
+  const exec = require('child_process').exec
+  exec(cmd, (err, stdout, stderr) => {
+    process.stdout.write(stdout)
+  })
 }
 
 const saveContract = () => {
   const fs = require('fs');
-  fs.writeFile('Output.sol', contract, (err) => {
+  fs.writeFile('../contracts/Output.sol', contract, (err) => {
     // In case of a error throw err.
     if (err) throw err;
   })
@@ -32,5 +25,6 @@ export default {
   deploy: (req, res) => {
     var network = req.body.network;
     saveContract();
+    sh('sudo truffle build && truffle migrate --network ropsten');
   },
 }
