@@ -2,21 +2,23 @@
   "name": "smartcontractgenerator",
   "version": "1.0.0",
   "description": "",
-  "main": "start.js",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node start.js"
   },
   "author": "Bastien Chevallier",
   "license": "ISC",
   "dependencies": {
+    "babel-register": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
     "body-parser": "^1.18.3",
+    "dotenv": "^6.2.0",
     "ejs": "^2.6.1",
     "express": "^4.16.4",
     "xmlhttprequest": "^1.8.0"
   },
   "devDependencies": {
-    "babel-preset-env": "^1.7.0",
-    "babel-register": "^6.26.0",
     "truffle-wallet-provider": "0.0.5"
   }
 }
