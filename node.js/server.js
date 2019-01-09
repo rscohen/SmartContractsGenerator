@@ -13,8 +13,8 @@ app.set('view engine', 'ejs')
 app.get('/', HomeController.getIndex);
 app.get('/generation', GenerationController.getPage);
 app.post('/generation', GenerationController.postGeneratedSC);
-app.get('/deployment', DeploymentController.getPage);
-app.post('/deployment', DeploymentController.deploy);
+app.post('/deployment', DeploymentController.getPage);
+app.post('/deployment/deploy', DeploymentController.deploy);
 
 app.listen(3000, function () {
   console.log('Example app listening on port 3000!')

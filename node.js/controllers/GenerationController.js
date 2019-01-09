@@ -56,7 +56,7 @@ export default {
       .then((template) => {
         //Redirect to summary before deployment
         console.log(template);
-        res.render('summary', { contract : template });
+        res.render('summary', {contract : template});
       });
     }
   },
