@@ -51,7 +51,7 @@ export default {
 
     //Personalize the SmartContract according to the inputs
     if (checked == true){
-      var urlToTemplate = "https://raw.githubusercontent.com/rscohen/SmartContractsGenerator/master/node.js/contracts/SimpleTokenTemplate.sol";
+      var urlToTemplate = "https://raw.githubusercontent.com/rscohen/SmartContractsGenerator/master/node.js/contracts_template/SimpleTokenTemplate.sol";
       personalizeSmartContract(urlToTemplate, tName, tSymbol, tSupply)
       .then((template) => {
         //Redirect to summary before deployment
