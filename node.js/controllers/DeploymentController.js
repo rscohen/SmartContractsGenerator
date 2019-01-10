@@ -27,5 +27,6 @@ export default {
     var network = req.body.network;
     saveContract();
     sh('sudo truffle build && truffle migrate --network ropsten');
+    res.render('final');
   },
 }
