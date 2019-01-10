@@ -9,7 +9,7 @@ const sh = (cmd) => {
 
 const saveContract = () => {
   const fs = require('fs');
-  fs.writeFile('../contracts/Output.sol', contract, (err) => {
+  fs.writeFile(__dirname + '/../contracts/Output.sol', contract, (err) => {
     // In case of a error throw err.
     if (err) throw err;
   })
