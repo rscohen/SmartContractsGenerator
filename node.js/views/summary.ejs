@@ -2,24 +2,66 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Your SmartContract</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Your smart contract</title>
     <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="http://designify.me/code-snippets/animated-buttons/css/btns.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Ubuntu:400,500,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
   </head>
+
   <body>
-    <h1> Your SmartContract </h1>
-    <p> Please, check your smartcontract before deployment </p>
-    <br>
-    <form action="/deployment" method="POST">
-      <textarea rows="25" cols="50" name="contract"><%- contract %></textarea>
-      <br>
-      <input type="submit" value="Validate">
-    </form>
+
+    <!-- Header -->
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <h2>Your smart contract</h2>
+        <p> Please, check your smart contract before deployment </p>
+      </div>
+    </div>
+
+    <!-- Main text -->
+    <div class="row">
+
+      <div class="col-md-2">
+      </div>
+
+      <div class="col-md-8">
+        <form action="/deployment" method="POST">
+          <textarea rows="25" cols="50" name="contract"><%- contract %></textarea>
+          <br>
+          <input type="submit" value="Validate">
+        </form>
+
+        <form action="/deployment" method="POST">
+          <textarea rows="25" cols="50" name="contract"><%- contract %></textarea>
+          <br>
+          <input type="submit" value="Validate">
+        </form>
+      </div>
+
+      <div class="col-md-2">
+      </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <hr  style="margin-top:50px;" />
+        <p class="text-center">
+          Created with <span class="icon"><i class="fa fa-heart fa-lg"></i></span> by <a href="https://github.com/rscohen/SmartContractsGenerator" target="_blank"> Rudy Cohen | Romain Rouvillois | Bastien Chevallier </a>
+        </p>
+    </footer>
+
   </body>
 
-  <footer>
-    <p>
-      Authors : Rudy Cohen | Romain Rouvillois | Bastien Chevallier
-      Confidential
-    </p>
-  </footer>
 </html>

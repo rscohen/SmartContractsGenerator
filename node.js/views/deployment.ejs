@@ -2,29 +2,66 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Deploy your SmartContract</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Deploy your smart contract</title>
     <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="http://designify.me/code-snippets/animated-buttons/css/btns.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Ubuntu:400,500,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
   </head>
+
   <body>
-    <h1> Deploy your SmartContract </h1>
-    <form action="/deployment/deploy" method="POST">
-      <div class="form-group">
-        <label for="network">Select the network</label>
-        <select class="form-control" id="network" name="network" required>
-          <option value= "ropsten" > Ropsten </option>
-        </select>
+
+    <!-- Header -->
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <h2>Deploy your smart contract</h2>
+      </div>
+    </div>
+
+    <!-- Main text -->
+    <div class="row">
+
+      <div class="col-md-2">
       </div>
 
-      <div class="text-center">
-        <input type="submit" value="Deploy">
+      <div class="col-md-8">
+        <form action="/deployment/deploy" method="POST">
+          <div class="form-group">
+            <label for="network">Select the network</label>
+            <select class="form-control" id="network" name="network" required>
+              <option value= "ropsten" > Ropsten </option>
+            </select>
+          </div>
+
+          <div class="text-center">
+            <input type="submit" value="Deploy">
+          </div>
+        </form>
       </div>
-    </form>
+
+      <div class="col-md-2">
+      </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <hr  style="margin-top:50px;" />
+        <p class="text-center">
+          Created with <span class="icon"><i class="fa fa-heart fa-lg"></i></span> by <a href="https://github.com/rscohen/SmartContractsGenerator" target="_blank"> Rudy Cohen | Romain Rouvillois | Bastien Chevallier </a>
+        </p>
+    </footer>
+        
   </body>
 
-  <footer>
-    <p>
-      Authors : Rudy Cohen | Romain Rouvillois | Bastien Chevallier
-      Confidential
-    </p>
-  </footer>
 </html>

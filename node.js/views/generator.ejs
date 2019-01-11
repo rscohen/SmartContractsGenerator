@@ -1,38 +1,80 @@
 <!DOCTYPE html>
 <html>
   <head>
-      <title> Define your SmartContract </title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Define your smart contract</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="http://designify.me/code-snippets/animated-buttons/css/btns.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Ubuntu:400,500,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
   </head>
 
   <body>
-  	<form action="/generation" method="POST">
-  		<div class="text-center">
-  		  <label for="name">Token name *</label>
-        <input class="form-control" type="text" id="tokenName" name="tokenName" placeholder="Token name" required>
-  		</div>
 
-  		<div class="text-center">
-  		  <label for="symbol">Token symbol *</label>
-        <input class="form-control" type="text" id="tokenSymbol" name="tokenSymbol" placeholder="Token symbol in 3 letters" required>
-  		</div>
+    <!-- Header -->
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <h2>Blockchain project for Coinhouse and l'X.</h2>
+      </div>
+    </div>
 
-  		<div class="text-center">
-  		  <label for="token_supply">Token supply *</label>
-        <input class="form-control" type="number" id="tokenSupply" name="tokenSupply" placeholder="Number of tokens" required>
-  		</div>
+    <!-- Main text -->
+    <div class="row" style="padding-top: 50px">
 
-  		<div class="text-center">
-  		  <button type="submit" class="btn btn-primary">
-  		    Submit
-  		  </button>
-  		</div>
-  	</form>
+      <div class="col-md-2">
+      </div>
+
+      <div class="col-md-8">
+        <form action="/generation" method="POST">
+          <div class="text-center" style="padding-top: 20px">
+            <label for="name">Token name *</label>
+            <input class="form-control" type="text" id="tokenName" name="tokenName" placeholder="Token name" required>
+          </div>
+
+          <div class="text-center" style="padding-top: 20px">
+            <label for="symbol">Token symbol *</label>
+            <input class="form-control" type="text" id="tokenSymbol" name="tokenSymbol" placeholder="Token symbol in 3 letters" required>
+          </div>
+
+          <div class="text-center" style="padding-top: 20px">
+            <label for="token_supply">Token supply *</label>
+            <input class="form-control" type="number" id="tokenSupply" name="tokenSupply" placeholder="Number of tokens" required>
+          </div>
+
+          <div class="text-center" style="padding-top: 20px">
+            <button type="submit" class="btn btn-danger">
+              Submit
+            </button>
+          </div>
+        </form>
+      </div>
+      
+      <div class="col-md-2">
+      </div>
+      
+    </div>
+
+  	
+
+    <!-- Footer -->
+    <footer class="footer">
+      <hr  style="margin-top:50px;" />
+        <p class="text-center">
+          Created with <span class="icon"><i class="fa fa-heart fa-lg"></i></span> by <a href="https://github.com/rscohen/SmartContractsGenerator" target="_blank"> Rudy Cohen | Romain Rouvillois | Bastien Chevallier </a>
+        </p>
+    </footer>
+
   </body>
 
-  <footer>
-  	<p>
-  		Authors : Rudy Cohen | Romain Rouvillois | Bastien Chevallier
-  		Confidential
-  	</p>
-  </footer>
 </html>
