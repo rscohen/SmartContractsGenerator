@@ -16,7 +16,7 @@ contract Output is ERC20, ERC20Detailed {
     /**
      * @dev Constructor that gives msg.sender all of existing tokens.
      */
-    constructor () public ERC20Detailed('Test', 'CNN', 18) {
+    constructor () public ERC20Detailed('CNN', 'CNN', 18) {
         _mint(msg.sender, INITIAL_SUPPLY);
     }
 }

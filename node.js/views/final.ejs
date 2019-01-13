@@ -41,7 +41,7 @@
       <script>
         $(function() {
           var content_address = [];
-          $.getJSON('build/contracts/Output.json', function(data) {
+          $.getJSON('/build/contracts/Output.json', function(data) {
             content_address.innerHTML(data['network']['address'])
           });
         });
