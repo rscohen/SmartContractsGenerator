@@ -22,10 +22,15 @@ export default {
     res.render('deployment');
   },
 
+  load: () => {
+    var mydata = JSON.parse(data);
+    alert(mydata[0].networks);
+  },
+
   deploy: (req, res) => {
     var network = req.body.network;
     saveContract();
-    sh('truffle build && truffle migrate --network ropsten');
-    res.render('final');
+    sh('sudo truffle build && sudo truffle migrate --network ropsten')
+    res.render('final')
   },
 }

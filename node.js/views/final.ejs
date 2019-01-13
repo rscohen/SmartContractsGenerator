@@ -18,11 +18,13 @@
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 
     <!-- Jquery script to read json files-->
+    <script type="text/javascript" src="../build/contracts/Output.json"></script>
+    <script type="text/javascript" src="../controllers/DeploymentController.js"></script>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"> </script>
 
   </head>
 
-  <body>
+  <body onload=load()>
 
         <!-- Header -->
     <div class="row">
@@ -37,17 +39,17 @@
 
       <div style="text-align: center;">
         This is the informations of your Smart Contract :
-        <a id="informations"></a>
+        <p id='informations'> </p>
       </div>
 
     </div>
 
-      <script src="http://code.jquery.com/jquery-1.11.0.min.js">
-        $(document).ready(function () {
-          $.getJSON('../build/contracts/Output.json', function(data) {
-            document.getElementById("informations").innerHTML= data['networks']['3']['address']
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js">
+       $(document).ready(function () {
+          $.getJSON('https://github.com/rscohen/SmartContractsGenerator/blob/master/build/contracts/SimpleToken.json', function(data) {
+            document.getElementById("informations").innerHTML= data.networks.3.address
           });
-        });
-      </script>
+       });
+    </script>
 
 </html>
