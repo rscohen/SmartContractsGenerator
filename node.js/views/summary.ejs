@@ -32,31 +32,28 @@
     <!-- Main text -->
     <div class="row">
 
-      <div class="col-md-2">
+      <div class="col-md-4">
       </div>
 
-      <div class="col-md-8">
+      <div class="col-md-4">
         <form action="/deployment" method="POST">
-          <textarea rows="25" cols="50" name="contract"><%- contract %></textarea>
+          <textarea rows="23" cols="50" name="contract"><%- contract %></textarea>
           <br>
-          <input type="submit" value="Validate">
-        </form>
-
-        <form action="/deployment" method="POST">
-          <textarea rows="25" cols="50" name="contract"><%- contract %></textarea>
-          <br>
-          <input type="submit" value="Validate">
+          
+          <div class="text-center" style="padding-top: 20px">
+            <input type="submit" value="Validate" class="btn btn-danger">
+          </div>
         </form>
       </div>
 
-      <div class="col-md-2">
+      <div class="col-md-4">
       </div>
 
     </div>
 
     <!-- Footer -->
     <footer class="footer">
-      <hr  style="margin-top:50px;" />
+      <hr  style="margin-top:5px;" />
         <p class="text-center">
           Created with <span class="icon"><i class="fa fa-heart fa-lg"></i></span> by <a href="https://github.com/rscohen/SmartContractsGenerator" target="_blank"> Rudy Cohen | Romain Rouvillois | Bastien Chevallier </a>
         </p>

@@ -19,6 +19,13 @@ h2 {
   margin-top: 60px;
 }
 
+/* Form styles */
+textarea {
+    color: #fff;
+    background-color: black;
+    width: 100%
+    }
+
 
 /* Global Button Styles */
 
@@ -175,4 +182,5 @@ body, hr.fancy-line:after {
   bottom: 0;
   width: 100%;
   text-align: center;
+  background: #353535;
 }
