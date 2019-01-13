@@ -17,6 +17,9 @@
     <link href='http://fonts.googleapis.com/css?family=Ubuntu:400,500,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 
+    <!-- Script to print console log (need to install npm i console-log-html)-->
+    <script type="application/javascript" src="console-log-html.min.js"></script>
+
   </head>
 
   <body>
@@ -31,6 +34,17 @@
 
     <!-- Main text -->
     <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+
+      <div style="text-align: center;">
+        This is the informations of your Smart Contract :
+      </div>
+
+      <ul id="myULContainer"></ul> <!-- I will hold the log messages -->
+      <script type="application/javascript" src="console-log-html.min.js"></script>
+      <script>
+        ConsoleLogHTML.connect(document.getElementById("myULContainer")); // Redirect log messages
+        ConsoleLogHTML.disconnect(); // Stop redirecting
+      </script>
 
       <div style="text-align: center;">
         Check your SmartContract on etherscan : <a href="https://ropsten.etherscan.io/tx/0x96d63b0d926156d0c0258f2746734e1a9c470d5e0e7e2b60c6d3e658ff5144b2" target="_blank"> etherscan</a>

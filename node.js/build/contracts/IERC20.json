@@ -180,9 +180,9 @@
   "sourceMap": "",
   "deployedSourceMap": "",
   "source": "pragma solidity ^0.5.0;\n\n/**\n * @title ERC20 interface\n * @dev see https://github.com/ethereum/EIPs/issues/20\n */\ninterface IERC20 {\n    function totalSupply() external view returns (uint256);\n\n    function balanceOf(address who) external view returns (uint256);\n\n    function allowance(address owner, address spender) external view returns (uint256);\n\n    function transfer(address to, uint256 value) external returns (bool);\n\n    function approve(address spender, uint256 value) external returns (bool);\n\n    function transferFrom(address from, address to, uint256 value) external returns (bool);\n\n    event Transfer(address indexed from, address indexed to, uint256 value);\n\n    event Approval(address indexed owner, address indexed spender, uint256 value);\n}\n",
-  "sourcePath": "/home/ubuntu/SmartContractsGenerator/node.js/contracts/IERC20.sol",
+  "sourcePath": "/Users/Rudy/Documents/GitHub/SmartContractsGenerator/node.js/contracts/IERC20.sol",
   "ast": {
-    "absolutePath": "/home/ubuntu/SmartContractsGenerator/node.js/contracts/IERC20.sol",
+    "absolutePath": "/Users/Rudy/Documents/GitHub/SmartContractsGenerator/node.js/contracts/IERC20.sol",
     "exportedSymbols": {
       "IERC20": [
         558
@@ -1015,7 +1015,7 @@
     "src": "0:763:2"
   },
   "legacyAST": {
-    "absolutePath": "/home/ubuntu/SmartContractsGenerator/node.js/contracts/IERC20.sol",
+    "absolutePath": "/Users/Rudy/Documents/GitHub/SmartContractsGenerator/node.js/contracts/IERC20.sol",
     "exportedSymbols": {
       "IERC20": [
         558
@@ -1852,8 +1852,8 @@
     "version": "0.5.0+commit.1d4f565a.Emscripten.clang"
   },
   "networks": {},
-  "schemaVersion": "3.0.1",
-  "updatedAt": "2019-01-10T15:56:18.823Z",
+  "schemaVersion": "3.0.0",
+  "updatedAt": "2019-01-13T12:21:44.197Z",
   "devdoc": {
     "details": "see https://github.com/ethereum/EIPs/issues/20",
     "methods": {},

@@ -10,9 +10,10 @@
   "author": "Bastien Chevallier",
   "license": "ISC",
   "dependencies": {
-    "babel-register": "^6.26.0",
     "babel-preset-env": "^1.7.0",
+    "babel-register": "^6.26.0",
     "body-parser": "^1.18.3",
+    "console-log-html": "^2.0.2",
     "dotenv": "^6.2.0",
     "ejs": "^2.6.1",
     "express": "^4.16.4",

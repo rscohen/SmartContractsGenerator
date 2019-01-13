@@ -10,13 +10,13 @@ import "./ERC20Detailed.sol";
  * `ERC20` functions.
  */
 
-contract SimpleToken is ERC20, ERC20Detailed {
-    uint256 public constant INITIAL_SUPPLY = 10000*(10**18);
+contract Output is ERC20, ERC20Detailed {
+    uint256 public constant INITIAL_SUPPLY = 1000*(10**18);
 
     /**
      * @dev Constructor that gives msg.sender all of existing tokens.
      */
-    constructor () public ERC20Detailed('Rouvillois', 'rvl', 18) {
+    constructor () public ERC20Detailed('tcn', 'tcn', 18) {
         _mint(msg.sender, INITIAL_SUPPLY);
     }
 }

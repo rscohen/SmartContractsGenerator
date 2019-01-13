@@ -25,7 +25,7 @@ export default {
   deploy: (req, res) => {
     var network = req.body.network;
     saveContract();
-    sh('sudo truffle build && truffle migrate --network ropsten');
+    sh('truffle build && truffle migrate --network ropsten');
     res.render('final');
   },
 }

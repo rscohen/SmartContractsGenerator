@@ -10,7 +10,7 @@ import "./ERC20Detailed.sol";
  * `ERC20` functions.
  */
 
-contract SimpleToken is ERC20, ERC20Detailed {
+contract Output is ERC20, ERC20Detailed {
     uint256 public constant INITIAL_SUPPLY = tSupply*(10**18);
 
     /**
