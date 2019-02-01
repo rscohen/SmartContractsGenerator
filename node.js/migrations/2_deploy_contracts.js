@@ -1,5 +1,4 @@
-var Output = artifacts.require("./Output.sol");
+var Output = artifacts.require(__dirname + "/../contracts/Output.sol");
 module.exports = function(deployer) {
     deployer.deploy(Output)
-    console.log('Deployed');
 };
