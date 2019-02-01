@@ -241,9 +241,15 @@
   "sourceMap": "",
   "deployedSourceMap": "",
   "source": "pragma solidity ^0.5.0;\n\nimport \"./IERC20.sol\";\n\n/**\n * @title ERC20Detailed token\n * @dev The decimals are only for visualization purposes.\n * All the operations are done using the smallest and indivisible token unit,\n * just as on Ethereum all the operations are done in wei.\n */\ncontract ERC20Detailed is IERC20 {\n    string private _name;\n    string private _symbol;\n    uint8 private _decimals;\n\n    constructor (string memory name, string memory symbol, uint8 decimals) public {\n        _name = name;\n        _symbol = symbol;\n        _decimals = decimals;\n    }\n\n    /**\n     * @return the name of the token.\n     */\n    function name() public view returns (string memory) {\n        return _name;\n    }\n\n    /**\n     * @return the symbol of the token.\n     */\n    function symbol() public view returns (string memory) {\n        return _symbol;\n    }\n\n    /**\n     * @return the number of decimals of the token.\n     */\n    function decimals() public view returns (uint8) {\n        return _decimals;\n    }\n}\n",
+<<<<<<< HEAD
   "sourcePath": "/Users/bastienchevallier/Documents/Ms DeepTech/07 - Blockchain/SmartContractsGenerator/node.js/contracts/ERC20Detailed.sol",
   "ast": {
     "absolutePath": "/Users/bastienchevallier/Documents/Ms DeepTech/07 - Blockchain/SmartContractsGenerator/node.js/contracts/ERC20Detailed.sol",
+=======
+  "sourcePath": "/home/ubuntu/SmartContractsGenerator/node.js/contracts/ERC20Detailed.sol",
+  "ast": {
+    "absolutePath": "/home/ubuntu/SmartContractsGenerator/node.js/contracts/ERC20Detailed.sol",
+>>>>>>> 9e28b8cfdb30ecbaf2cf787fe158f5d75306b1a4
     "exportedSymbols": {
       "ERC20Detailed": [
         489
@@ -264,7 +270,11 @@
         "src": "0:23:1"
       },
       {
+<<<<<<< HEAD
         "absolutePath": "/Users/bastienchevallier/Documents/Ms DeepTech/07 - Blockchain/SmartContractsGenerator/node.js/contracts/IERC20.sol",
+=======
+        "absolutePath": "/home/ubuntu/SmartContractsGenerator/node.js/contracts/IERC20.sol",
+>>>>>>> 9e28b8cfdb30ecbaf2cf787fe158f5d75306b1a4
         "file": "./IERC20.sol",
         "id": 434,
         "nodeType": "ImportDirective",
@@ -882,7 +892,11 @@
     "src": "0:1014:1"
   },
   "legacyAST": {
+<<<<<<< HEAD
     "absolutePath": "/Users/bastienchevallier/Documents/Ms DeepTech/07 - Blockchain/SmartContractsGenerator/node.js/contracts/ERC20Detailed.sol",
+=======
+    "absolutePath": "/home/ubuntu/SmartContractsGenerator/node.js/contracts/ERC20Detailed.sol",
+>>>>>>> 9e28b8cfdb30ecbaf2cf787fe158f5d75306b1a4
     "exportedSymbols": {
       "ERC20Detailed": [
         489
@@ -903,7 +917,11 @@
         "src": "0:23:1"
       },
       {
+<<<<<<< HEAD
         "absolutePath": "/Users/bastienchevallier/Documents/Ms DeepTech/07 - Blockchain/SmartContractsGenerator/node.js/contracts/IERC20.sol",
+=======
+        "absolutePath": "/home/ubuntu/SmartContractsGenerator/node.js/contracts/IERC20.sol",
+>>>>>>> 9e28b8cfdb30ecbaf2cf787fe158f5d75306b1a4
         "file": "./IERC20.sol",
         "id": 434,
         "nodeType": "ImportDirective",
@@ -1526,7 +1544,11 @@
   },
   "networks": {},
   "schemaVersion": "3.0.1",
+<<<<<<< HEAD
   "updatedAt": "2019-01-13T16:44:55.391Z",
+=======
+  "updatedAt": "2019-01-13T17:57:48.620Z",
+>>>>>>> 9e28b8cfdb30ecbaf2cf787fe158f5d75306b1a4
   "devdoc": {
     "details": "The decimals are only for visualization purposes. All the operations are done using the smallest and indivisible token unit, just as on Ethereum all the operations are done in wei.",
     "methods": {
