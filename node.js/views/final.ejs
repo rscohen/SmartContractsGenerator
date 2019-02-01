@@ -37,17 +37,18 @@
 
       <div style="text-align: center;">
         This is the informations of your Smart Contract :
-        <a id="informations"></a>
       </div>
-
+      <div style="text-align: center;">
+        <p id="informations"></p>
+      </div>
     </div>
 
-      <script src="http://code.jquery.com/jquery-1.11.0.min.js">
-        $(document).ready(function () {
-          $.getJSON('../build/contracts/Output.json', function(data) {
-            document.getElementById("informations").innerHTML= data['networks']['3']['address']
-          });
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js">
+      $(document).ready(function () {
+        $.getJSON('../build/contracts/Output.json', function(data) {
+          document.getElementById("informations").innerHTML = data.networks.3.address]
         });
-      </script>
+      });
+    </script>
 
 </html>
