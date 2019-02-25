@@ -31,7 +31,6 @@
     <div class="row">
       <div class="col-md-12 text-center">
         <h2>Summary  of your SmartContract</h2>
-        <p>There are all the informations about your deployed Smart Contract :</p>
       </div>
     </div>
 
@@ -39,19 +38,20 @@
     <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
 
       <div style="text-align: center;">
-        This is the informations of your Smart Contract :
+        <h4> Your Smartcontract address : </h4>
+        <p> <%= address %> </p>
+      </div>
+      <div style="text-align: center;">
+        <h4>Gas used for transaction : </h4>
+        <p> <%= gasUsed %> </p>
+      </div>
+      <div style="text-align: center;">
+        <h4> Transaction Hash : </h4>
+        <p> <%= txoHash %> </p>
       </div>
       <div style="text-align: center;">
         <p id="informations"></p>
       </div>
     </div>
-
-    <script src="http://code.jquery.com/jquery-1.11.0.min.js">
-       $(document).ready(function () {
-          $.getJSON('https://github.com/rscohen/SmartContractsGenerator/blob/master/build/contracts/SimpleToken.json', function(data) {
-            document.getElementById("informations").innerHTML= data.networks.3.address
-          });
-       });
-    </script>
 
 </html>

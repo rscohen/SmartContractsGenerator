@@ -11,12 +11,12 @@ import "./ERC20Detailed.sol";
  */
 
 contract Output is ERC20, ERC20Detailed {
-    uint256 public constant INITIAL_SUPPLY = 2*(10**18);
+    uint256 public constant INITIAL_SUPPLY = 100000*(10**18);
 
     /**
      * @dev Constructor that gives msg.sender all of existing tokens.
      */
-    constructor () public ERC20Detailed('did', 'de', 18) {
+    constructor () public ERC20Detailed('LEARN2LAUNCH', 'L2L', 18) {
         _mint(msg.sender, INITIAL_SUPPLY);
     }
 }
