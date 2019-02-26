@@ -1,3 +1,5 @@
+const fs = require('fs');
+
 const checkInputs = (name, symbol, supply) => {
   console.log(name);
   console.log(symbol);
@@ -17,17 +19,9 @@ const checkInputs = (name, symbol, supply) => {
   }
 }
 
-const openExternalFile = (url) => {
-  var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
-  var oReq = new XMLHttpRequest();
-  oReq.open("get", url, false);
-  oReq.send();
-  return oReq;
-}
-
 const personalizeSmartContract = (SmartContractTemplate, tName, tSymbol, tSupply) => {
   return new Promise(function(resolve, reject) {
-    var template = openExternalFile(SmartContractTemplate).responseText;
+    var template = fs.readFileSync(__dirname + SmartContractTemplate, 'utf8');
     var result = template.replace(/tName/g, '\''+tName+'\'');
     result = result.replace(/tSymbol/g, '\''+tSymbol+'\'');
     result = result.replace(/tSupply/g, tSupply.toString());
@@ -51,12 +45,14 @@ export default {
 
     //Personalize the SmartContract according to the inputs
     if (checked == true){
-      var urlToTemplate = "https://raw.githubusercontent.com/rscohen/SmartContractsGenerator/master/node.js/contracts_template/SimpleTokenTemplate.sol";
-      personalizeSmartContract(urlToTemplate, tName, tSymbol, tSupply)
-      .then((template) => {
+      var pathToTemplate = "/../contracts_template/SimpleTokenTemplate.sol";
+      personalizeSmartContract(pathToTemplate, tName, tSymbol, tSupply)
+      .then((contract) => {
         //Redirect to summary before deployment
-        console.log(template);
-        res.render('summary', {contract : template});
+        console.log('=======')
+        console.log(contract);
+        console.log('=======')
+        res.render('summary', {contract : contract});
       });
     }
   },

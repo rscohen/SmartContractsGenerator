@@ -17,10 +17,16 @@
     "dotenv": "^6.2.0",
     "ejs": "^2.6.1",
     "express": "^4.16.4",
-    "web3": "^1.0.0-beta.41",
+    "solc": "^0.5.3",
+    "web3": "^1.0.0-beta.34",
     "xmlhttprequest": "^1.8.0"
   },
   "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.0.5",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
     "truffle-wallet-provider": "0.0.5"
   }
 }
