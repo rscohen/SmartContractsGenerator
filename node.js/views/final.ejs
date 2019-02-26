@@ -38,20 +38,26 @@
     <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
 
       <div style="text-align: center;">
-        <h4> Your Smartcontract address : </h4>
-        <p> <%= address %> </p>
+        <h4> Your SmartContract address: </h4>
+        <a id="etherscanlink" href="" target="_blank" rel="noopener noreferrer"><%= address %></a>
       </div>
       <div style="text-align: center;">
-        <h4>Gas used for transaction : </h4>
+        <h4>Gas used for transaction: </h4>
         <p> <%= gasUsed %> </p>
       </div>
       <div style="text-align: center;">
-        <h4> Transaction Hash : </h4>
-        <p> <%= txoHash %> </p>
-      </div>
-      <div style="text-align: center;">
-        <p id="informations"></p>
+        <h4> Transaction Hash: </h4>
+        <a id="txinfo" href="" target="_blank" rel="noopener noreferrer"> <%= txoHash %> </a>
       </div>
     </div>
 
 </html>
+
+<script>
+  var contractAddress = "<%= address %>";
+  var txoHash = "<%= txoHash %>"
+  var contractLink = "https://ropsten.etherscan.io/address/" + contractAddress;
+  var transactionLink = "https://ropsten.etherscan.io/tx/"+ txoHash;
+  document.getElementById("etherscanlink").href= contractLink;
+  document.getElementById("txinfo").href= transactionLink;
+</script>

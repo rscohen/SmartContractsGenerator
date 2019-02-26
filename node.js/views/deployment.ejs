@@ -46,12 +46,12 @@
           </div>
 
           <div class="text-center" style="padding-top: 20px">
-            <input type="submit" value="Deploy" class="btn btn-danger">
+            <input type="submit" value="Deploy" onclick="waitingmessage" class="btn btn-danger">
           </div>
 
         </form>
         <div style="text-align: center;">
-          Please wait until the block is mined
+          <p id="confirmationbody"></p>
         </div>
       </div>
 
@@ -72,3 +72,9 @@
   </body>
 
 </html>
+
+<script>
+function waitingmessage(){
+  document.getElementById("confirmationbody").innerHTML = "Please wait until your block is mined...";
+}
+</script>

@@ -208,8 +208,6 @@ export default {
     //sh('sudo truffle build && sudo truffle migrate --network ropsten');
     //Deploy contract
     deployContract('Output', function(receipt){
-      console.log('LAST CALLBACK');
-      console.log(receipt);
       res.render('final', {
         "address":receipt.contractAddress,
         "gasUsed":receipt.gasUsed,
